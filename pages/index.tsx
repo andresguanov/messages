@@ -5,11 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
+import { images } from '../constants'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   const [messages, setMessages] = useState<Data[]>([])
-  const [id, setId] = useState<number>(0)
+  const [id, setId] = useState<number>(images)
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(function () {
@@ -44,19 +45,18 @@ const Home: NextPage = () => {
         )}
         <div className="flex justify-around ">
           <button
-            className={`${id === 0 ? 'text-gray-500' : 'font-bold'}`}
-            disabled={id === 0}
-            type="button"
-            onClick={() => setId(id - 1)}
-          >
-            {'Anterior'}
-          </button>
-
-          <button
             className={`${id === messages.length - 1 ? 'text-gray-500' : 'font-bold'}`}
             disabled={id === messages.length - 1}
             type="button"
             onClick={() => setId(id + 1)}
+          >
+            {'Anterior'}
+          </button>
+          <button
+            className={`${id === 0 ? 'text-gray-500' : 'font-bold'}`}
+            disabled={id === 0}
+            type="button"
+            onClick={() => setId(id - 1)}
           >
             {'Próximo'}
           </button>

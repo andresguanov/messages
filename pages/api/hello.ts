@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const images: number = 10
+import { images } from '../../constants'
 
 const data: Data[] = []
 
-for (let i = 0; i < images; i++) {
+for (let i = images - 1; i >= 0; i--) {
   data.push({
     id: i,
     title: `Imagen ${i}`,
