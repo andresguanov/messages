@@ -5,7 +5,7 @@ import { images } from '../../constants'
 
 const data: Data[] = []
 
-for (let i = images - 1; i >= 0; i--) {
+for (let i = images; i >= 0; i--) {
   data.push({
     id: i,
     title: `Imagen ${i}`,
