@@ -2,12 +2,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+  id: number
+  title: string
+  description: string
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+const data: Data[] = [
+  {
+    id: 0,
+    title: 'Primer mensaje',
+    description: 'Mensajito',
+  },
+]
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data[]>) {
+  res.status(200).json(data)
 }
