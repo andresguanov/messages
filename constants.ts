@@ -1,1 +1,1 @@
-export const images: number = 9
+export const images: number = 10

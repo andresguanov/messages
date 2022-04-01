@@ -4,8 +4,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { images } from '../../constants'
 
 const data: Data[] = []
+const minNumber: number = 0
 
-for (let i = images; i >= 0; i--) {
+for (let i = images; i >= minNumber; i--) {
   data.push({
     id: i,
     title: `Imagen ${i}`,
